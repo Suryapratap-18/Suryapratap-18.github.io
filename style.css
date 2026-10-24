@@ -1,0 +1,138 @@
+/* ==========================================================================
+   surya.codes — Custom Styles & Animations (style.css)
+   ========================================================================== */
+
+:root {
+  --lime: #B8F338;
+  --bg: #0B0C0B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0B0C0B;
+  color: #F3F5F2;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #B8F338;
+  color: #0B0C0B;
+}
+
+/* Subtle background ambient grid & radial glow */
+.ambient-bg {
+  background-image:
+    radial-gradient(circle at 80% 12%, rgba(184, 243, 56, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 15% 65%, rgba(184, 243, 56, 0.035) 0%, transparent 45%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0C0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #232724;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8F338;
+}
+
+/* Floating 3D keyframe */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1.2deg); }
+}
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(184, 243, 56, 0.6);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px rgba(184, 243, 56, 0);
+  }
+}
+.pulse-lime {
+  animation: pulseDot 2.4s infinite;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-100 { transition-delay: 80ms; }
+.delay-200 { transition-delay: 160ms; }
+.delay-300 { transition-delay: 240ms; }
+
+/* Spotlight Card Effect */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(184, 243, 56, 0.065), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+.spotlight-card:hover {
+  border-color: rgba(184, 243, 56, 0.28);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+/* 3D Perspective Tilt Container */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+}
+
+/* Nav Link Active State */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1.5px;
+  background-color: #B8F338;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+.nav-link.active {
+  color: #F3F5F2;
+}
