@@ -27,7 +27,6 @@ First-year B.Tech CSE (AI & ML) student building projects, solving problems, and
 - `index.html` - Main portfolio page
 - `styles.css` - Styling and animations
 - `script.js` - Interactive features
-- `Logo.jpg` - Brand logo
 - `LICENSE` - MIT License
 
 ---
@@ -36,7 +35,7 @@ First-year B.Tech CSE (AI & ML) student building projects, solving problems, and
 
 ✅ Fully responsive design  
 ✅ Smooth animations & interactions  
-✅ Dark mode with neon accents  
+✅ Dark mode 
 ✅ Mobile-friendly  
 ✅ Social links (GitHub, LinkedIn, Instagram)  
 ✅ Contact form  
@@ -47,7 +46,7 @@ First-year B.Tech CSE (AI & ML) student building projects, solving problems, and
 
 - **GitHub:** [Suryapratap-18](https://github.com/Suryapratap-18)
 - **LinkedIn:** [surya-codes](https://linkedin.com/in/surya-codes)
-- **Instagram:** [@surya.codex.in](https://instagram.com/surya.codex.in)
+- **Instagram:** [@code.surya.io](https://instagram.com/code.surya.io)
 - **Email:** codesurya.io@gmail.com
 
 ---
